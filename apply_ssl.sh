@@ -51,9 +51,9 @@ fi
 # 6. 安装证书到指定目录
 if [ $? -eq 0 ]; then
     ~/.acme.sh/acme.sh --install-cert -d "$DOMAIN" \
-        --key-file       "$CERT_PATH/key.pem"  \
-        --fullchain-file "$CERT_PATH/cert.pem" \
-        --reloadcmd      "sudo systemctl reload nginx || true"
+        --key-file       "$CERT_PATH/privatekey.pem"  \
+        --fullchain-file "$CERT_PATH/fullchain.pem" \
+        # --reloadcmd      "sudo systemctl reload nginx || true"
 
     echo "--------------------------------------------"
     echo "✅ 证书申请成功！"

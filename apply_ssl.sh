@@ -52,7 +52,7 @@ fi
 if [ $? -eq 0 ]; then
     ~/.acme.sh/acme.sh --install-cert -d "$DOMAIN" \
         --key-file       "$CERT_PATH/privatekey.pem"  \
-        --fullchain-file "$CERT_PATH/fullchain.pem" \
+        --fullchain-file "$CERT_PATH/fullchain.pem"
         # --reloadcmd      "sudo systemctl reload nginx || true"
 
     echo "--------------------------------------------"

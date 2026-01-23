@@ -57,8 +57,8 @@ if [ $? -eq 0 ]; then
 
     echo "--------------------------------------------"
     echo "✅ 证书申请成功！"
-    echo "私钥: $CERT_PATH/key.pem"
-    echo "证书: $CERT_PATH/cert.pem"
+    echo "私钥: $CERT_PATH/privatekey.pem"
+    echo "证书: $CERT_PATH/fullchain.pem"
     echo "提示: acme.sh 已配置自动续期，无需手动干预。"
     echo "--------------------------------------------"
 else

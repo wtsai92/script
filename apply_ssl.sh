@@ -42,13 +42,17 @@ if [ ! -f "$HOME/.acme.sh/acme.sh" ]; then
     source ~/.bashrc
 fi
 
-# 5. 开始申请证书 (使用 DNS-01 验证)
+# 5. 关键步骤：强制切换到 Let's Encrypt
+echo "正在将 CA 切换为 Let's Encrypt..."
+~/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+
+# 6. 开始申请证书 (使用 DNS-01 验证)
 ~/.acme.sh/acme.sh --issue --dns dns_cf \
     -d "$DOMAIN" \
     -d "*.$DOMAIN" \
     --force
 
-# 6. 安装证书到指定目录
+# 7. 安装证书到指定目录
 if [ $? -eq 0 ]; then
     ~/.acme.sh/acme.sh --install-cert -d "$DOMAIN" \
         --key-file       "$CERT_PATH/privatekey.pem"  \

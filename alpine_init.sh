@@ -32,10 +32,10 @@ echo "--- 正在更新系统并安装工具 (htop, iftop, vnstat) ---"
 apk update && apk upgrade
 apk add htop iftop vnstat bash curl tzdata
 
-# 4. 设置系统时区为上海 (CST)
+# 4. 设置系统时区为新加坡 (SGT)
 echo "--- 正在配置系统时区 ---"
-cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-echo "Asia/Shanghai" > /etc/timezone
+cp /usr/share/zoneinfo/Asia/Singapore /etc/localtime
+echo "Asia/Singapore" > /etc/timezone
 
 # 5. 开启内核 BBR 加速
 echo "--- 正在开启内核 BBR 加速 ---"
